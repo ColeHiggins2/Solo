@@ -8,3 +8,4 @@ class ThanksPage(TemplateView):
 
 class HomePage(TemplateView):
     template_name = 'index.html'
+    
