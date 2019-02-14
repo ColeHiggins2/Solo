@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+{% load static %}
+
+<html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Solo</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Alternative to Bootstrap 3 Glyphicons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'solo/css/master.css'%}">
+
+
   </head>
   <body>
-    {% block content %}
+    <nav class='navbar navbar-expand-lg bg-dark mynav' role='navigation' id='navbar'>
+      <div class="container">
+        <a class='navbar-brand mynav' href="{% url 'home' %}">Solo</a>
+        <ul class='navbar-nav align-items-center'>
+          {% if user.is_authenticated %}
+            <li><a href="#" class ='btn btn-simple'>Post</a></li>
+            <li><a href="#" class ='btn btn-simple'>Groups</a></li>
+            <li><a href="#" class ='btn btn-simple'>Create Group</a></li>
+            <li><a href="{% url 'accounts:logout' %}" class ='btn btn-simple'>Log Out"</a></li>
+          {% else %}
+            <li><a href="#" class ='btn btn-simple'>Groups</a></li>
+            <li><a href="{% url 'accounts:login'%}" class ='btn btn-simple'>Log In</a></li>
+            <li><a href="{% url 'accounts:signup'%}" class ='btn btn-simple'>Sign Up</a></li>
+          {% endif %}
 
-    {% endblock %}
+        </ul>
+      </div>
+    </nav>
+
+    <div class'container mycontent'>
+
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+
   </body>
 </html>
