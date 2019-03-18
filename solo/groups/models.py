@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
+from django.conf import settings
+from django.urls import reverse
 # Create your models here.
 # reminder- install misaka, visual studio c++ 14.0 required (used for link imbedding) conda install libpython m2w64-toolchain -c msys2
 import misaka
@@ -8,11 +10,11 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 from django import template
-register = template.library()
+register = template.Library()
 
 class Group(models.Model):
     name = models.CharField(max_length=255,unique=True)
-    slug = mdoels.SlugField(=allow_unicode=True,unique=True)
+    slug = models.SlugField(allow_unicode=True,unique=True)
     description = models.TextField(blank=True,default='')
     description_html = models.TextField(editable=False,default='',blank=True)
     members = models.ManyToManyField(User,through='GroupMember')
@@ -32,16 +34,11 @@ class Group(models.Model):
         ordering = ['name']
 
 class GroupMember(models.Model):
-    group = models.ForeignKey(Group,related_name='memeberships')
-    user = models.ForeignKey(User,related_name='user_groups')
+    group = models.ForeignKey(Group,related_name='memeberships',on_delete=models.CASCADE)
+    user = models.ForeignKey(User,related_name='user_groups',on_delete=models.CASCADE)
 
     def __str__(self):
         return self.user.username
 
     class Meta:
         unique_together = ('group', 'user')
-
-
-
-
-    pass
