@@ -1,6 +1,19 @@
 body {
   margin: 0;
-  overflow: hidden;
-  background-color: #008000;
+  overflow: auto;
+
+  background-color: black;
   color:white;
+}
+#navbar{
+  background-color: #00703C;
+  height: 100px;
+}
+.btn{
+  color: #FFFFFF;
+}
+.mynav{
+  color: #FFFFFF;
+  font-size: 30px;
+
 }
