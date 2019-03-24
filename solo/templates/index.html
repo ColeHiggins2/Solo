@@ -8,44 +8,141 @@
   <title></title>
   <style>
 
-  h1 {
-    text-align: center;
-    font-family: Montserrat;
-    padding: 50px;
-    padding-bottom: 50px;
-  }
 
-  h2, p {
+
+      h2, p {
     text-align: center;
     font-size: 20px;
     font-family: Montserrat;
     padding-left: 100px;
     padding-right: 100px;
-  }
+      }
+
+     .HomePage{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 1070px;
+    width: 1920px;
+
+    filter: blur(4px) grayscale(100%);
+    -webkit-filter: blur(4px) grayscale(100%);
+
+      }
+
+      body {
+    background-color: #F5FFFA
+
+      }
+
+      .HomeContent{
+    color: black;
+
+      }
+
+      .title {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: white;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 100px;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 44.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 25%;
+    padding: 10px;
+    text-align: center;
+      }
+
+      .AboutSolo, .AboutUncc, .SoloTeam{
+        font-weight: bold;
+        font-size: 30px;
+      }
+
+      .HomeText{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 2px;
+        padding: 10px 20px;
+        padding-top: 30px;
+        grid-gap: 0px;
+      }
+
+      .p1Solo, .p2Uncc, .p3Team {
+        text-align: center;
+        padding: 10px 2px;
+
+      }
+      footer{
+        color: white;
+        height: 50px;
+        background-color: #00703C;
+        font-weight: normal;
+      }
+      .footer{
+        font-size: 20px;
+        float: center;
+        padding-left: 900px;
+        padding-top: 10px;
+        color: #27561C;
+
+      }
 
 
   </style>
 </head>
 
 <body>
-  <h1>Welcome to SOLO!</h1>
-  <h2>About SOLO<h2>
-  <p>
-    Here at SOLO we are looking to help you find the roommate you are looking for the perfect roommate! SOLO brings you the tools to
-    help make the process of finding the perfect roommate much easier! We are looking to help you talk to other students looking to
-    live on campus. This shows you every building option on campus, as well as people who are also interested in the same buildings!
-    You can join small groups that would be like filling a room! There are many options for students looking to live on campus!
-  </p>
-  <h2>About UNCC<h2>
-  <p>
+  <div class="HomeContent ">
+  <img class="HomePage" src="https://admissions.uncc.edu/sites/admissions.uncc.edu/files/styles/coast_to_coast/public/fields/tall_image_rotator/field_tall_image/library-home.jpg?itok=luj5_jgd" alt="Home Page">
 
-  </p>
-  <h2>About The SOLO Team<h2>
-  <p>
+    <div class="HomeText">
 
-  </p>
+      <h1 class="title">SOLO</h1>
 
+        <div class="p1">
+          <h2 class="AboutSolo">About SOLO<h2>
+            <p class="p1Solo">
+              Here at SOLO we are looking to help you find the roommate you are looking for the perfect roommate! SOLO brings you the tools to
+              help make the process of finding the perfect roommate much easier! We are looking to help you talk to other students looking to
+              live on campus. This shows you every building option on campus, as well as people who are also interested in the same buildings!
+              You can join small groups that would be like filling a room! There are many options for students looking to live on campus!
+            </p>
+        </div>
+
+        <div class="p2">
+          <h2 class="AboutUncc">About UNCC <h2>
+            <p class="p2Uncc">
+              The city of Charlotte had sought a public university since 1871 but was never able to sustain one. For years, the nearest
+              state-supported university was 90 miles (140 km) away. The city submitted a bid in the late 1880s for what would become North
+               Carolina State University, but lost to the city of Raleigh after a local farmer offered to donate land for the campus.
+                In 1946, the city sought a state-run medical school; instead, the state expanded the existing two-year school at UNC-Chapel Hill.
+            </p>
+        </div>
+
+        <div class="p3">
+          <h2 class="SoloTeam">About The SOLO Team<h2>
+            <p class="p3Team">
+              We are a group of individuals looking to help uncc students find the best roomates on campus and help build life long freinds! we are here
+            to help you all find the perfect roommate with the greatest ease. we are all UNCC students class of 2019 and we thought about how now many people
+             are roomming with random people and so this is why we are bringing you SOLO! We hope this website brings all of you closer to finding the perfect
+             roommate!
+            </p>
+        </div>
+
+
+    </div>
+  </div>
 </body>
+
+<footer>
+  <h1 class="footer">&copy 2019|SOLO</h1>
+</footer>
+
 </html>
 
 {% endblock %}
