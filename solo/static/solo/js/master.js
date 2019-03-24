@@ -1,4 +1,5 @@
 // SOURCE: http://codepen.io/Thibka/pen/mWGxNj
+/*
 var canvas = document.getElementById('canvas'),
   context = canvas.getContext('2d'),
   canvasWidth = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth),
@@ -12,7 +13,7 @@ var persons = [],
   birthToGive = 25;
 
 var colors = [];
-/* Galactic Tea - http://www.colourlovers.com/palette/1586746/Galactic_Tea*/
+//Galactic Tea - http://www.colourlovers.com/palette/1586746/Galactic_Tea
 colors[2] = [];
 colors[2]['background'] = '#2F294F';
 colors[2][1] = 'rgba(74,49,89,';
@@ -203,3 +204,4 @@ function giveBirth(e, u) {
 
   if (u > 1) giveBirth(e, u - 1);
 }
+*/
