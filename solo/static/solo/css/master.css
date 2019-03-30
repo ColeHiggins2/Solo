@@ -13,7 +13,9 @@ body {
   color: #FFFFFF;
 }
 .mynav{
-  color: #FFFFFF;
+  /* color: #FFFFFF; */
+  color: black;
   font-size: 30px;
+
 
 }

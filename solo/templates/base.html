@@ -26,7 +26,8 @@
     <nav class='navbar navbar-expand-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH mynav' role='navigation' id='navbar'>
       <div class="container">
         <a class='navbar-brand mynav' href="{% url 'home' %}">SOLO</a>
-        <ul class='navbar-nav align-items-center'>
+        <ul class='navbar-nav '>
+          <!-- align-items-center -->
           {% if user.is_authenticated %}
             <li><a href="#" class ='btn btn-simple'>People</a></li>
             <li><a href="{% url 'posts:create' %}" class ='btn btn-simple'>Post</a></li>
