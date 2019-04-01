@@ -24,6 +24,8 @@ html{
 #mynav{
   float:left;
   margin-right: auto;
+  font-size: 60px;
+  
 }
 
 #buttons{
