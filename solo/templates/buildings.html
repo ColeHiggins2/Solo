@@ -11,6 +11,7 @@
   body {
   background-color: #F5FFFA
 
+
   }
 
 
@@ -19,18 +20,23 @@
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
+  font-weight: lighter;
+  text-decoration: underline;
 }
+
   .BelkHall, .ElmHall, .GreekVillage, .HawthornHall,
   .HolshouserHall, .HuntHall, .LaurelHall, .LevineHall, .LynchHall,
   .MartinHall, .WitherspoonHall, .MiltimoreHall, .OakHall,
    .PineHall, .ScottHall, .WallisHall, .SanfordHall{
 
-    height: 500px;
-    width: 500px;
+    height: 575px;
+    width: 575px;
 
   }
   .BuildingName{
     color: Black;
+    font-weight:lighter;
+
   }
 
   .grid-container{
@@ -127,26 +133,6 @@
 
 }
 
-  body{
-    background-color: #F5FFFA;
-
-  }
-  img {
-    opacity: 1;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
-  }
-/* .middle{
-  opacity: 0;
-  filter: alpha(opacity=0); 
-} */
-  img:hover {
-    opacity: .5;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
-  }
-
-
-
-
   footer{
     color: white;
     height: 50px;
@@ -159,8 +145,44 @@
     padding-top: 10px;
     color: #27561C;
     font-size: 1vw;
+  }
+
+  #container{
+    position: relative;
+  }
+  #image{
+    opacity: 1;
+    transition: .5s ease;
+  }
+  .middle{
+    opacity: 0;
+    transition: .5s ease;
+  }
+  #container:hover #image {
+    opacity: .2;
+  }
+  #container:hover .middle{
+    opacity: 1;
+  }
+  .text{
+    color: #00703C;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    position: absolute;
+    font-family: Montserrat;
+    font-size: 17px;
 
   }
+
+.info{
+  padding-top: 25px;
+  padding-bottom: 40px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
 
   </style>
 
@@ -172,105 +194,240 @@
 <h1 class="home"> </h1>
 
 
-
+<div class="info">
   <h1 class="title">North Village </h1>
   <div class="grid-container">
 
-  <div id="container"class="Belk">
-  <h2 class='BuildingName' id="Belk">Belk Hall</h2>
-    <img class="BelkHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Belk%20Hall/General/Bell%2C%20Exterior%201.jpg" alt="Belk Hall">
+    <div id="container"class="Belk">
+    <h2 class='BuildingName' id="Belk">Belk Hall</h2>
+      <img id="image" class="BelkHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Belk%20Hall/General/Bell%2C%20Exterior%201.jpg" alt="Belk Hall">
       <div class="middle">
-        <div class="text">Helloooooo</div>
+        <div class="text">
+          Belk Hall, which opened in 2013, was designed to primarily house upper-class students.
+           Belk Hall offers a blend of apartments and suite units. The common areas feature study rooms, casual
+           lounges and community kitchens throughout the building. Its open design encourages interaction while
+           creating a community atmosphere.
+         </div>
       </div>
-  </div>
+    </div>
 
-  <div class="Lynch">
-  <h2 class='BuildingName' id="Lynch"> Lynch Hall</h2>
-    <img class="LynchHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Lynch%20Hall/General/Lynch%2C%20Exterior%201.jpg" alt="Lynch Hall">
-  </div>
+    <div id="container"class="Lynch">
+    <h2 class='BuildingName' id="Lynch"> Lynch Hall</h2>
+      <img id="image" class="LynchHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Lynch%20Hall/General/Lynch%2C%20Exterior%201.jpg" alt="Lynch Hall">
+      <div class="middle">
+        <div class="text">
+          Lynch Hall, which opened in 2004, houses approximately 500 students and is reserved for
+           new students, many of whom will be enrolled in Learning Communities. Lynch offers suite-style living
+           with 4 students sharing a bathroom and living room. Lynch features lounges/study rooms and laundry
+           facilities available on each floor. The first floor features a classroom, large community room, game room,
+           vending area and kitchen.
+         </div>
+      </div>
+    </div>
 
- <div class="Miltmore">
-  <h2 class='BuildingName' id="Miltimore"> Miltimore Hall</h2>
-    <img class="MiltimoreHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Miltimore%20Hall/General/Miltimore%2C%20Exterior%201.jpg" alt="Miltimore Hall">
- </div>
+   <div id="container" class="Miltmore">
+    <h2 class='BuildingName' id="Miltimore"> Miltimore Hall</h2>
+      <img id="image" class="MiltimoreHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Miltimore%20Hall/General/Miltimore%2C%20Exterior%201.jpg" alt="Miltimore Hall">
+      <div class="middle">
+        <div class="text">
+          Miltimore Hall, which opened in 2011, is located in North Village. Miltimore offers both
+          suite and apartment style units. Community lounges and kitchens, central laundry facilities are located on
+          each floor. Miltimore is LEED certified meaning that the design, construction and use of the building have
+          met independently established criteria for eco-friendliness. As such, this building represents UNC Charlotte’s
+          commitment to be greener.
+        </div>
+      </div>
+   </div>
 
-  <div class="Wallis">
-  <h2 class='BuildingName' id="Wallis"> Wallis Hall</h2>
-    <img class="WallisHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Wallis%20Hall/General/Wallis%2C%20Exterior%201.jpg" alt="Wallis Hall ">
-  </div>
+    <div id="container" class="Wallis">
+    <h2 class='BuildingName' id="Wallis"> Wallis Hall</h2>
+      <img id="image" class="WallisHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Wallis%20Hall/General/Wallis%2C%20Exterior%201.jpg" alt="Wallis Hall ">
+      <div class="middle">
+        <div class="text">
+          Wallis Hall, which opened in 2000, is located in North Village. Wallis offers both suite
+          and apartment style living options. Community kitchens and laundry facilities are available on the second
+          through fourth floors. Wallis also has study lounges and classrooms on each floor, not to mention a great
+          courtyard! Apartments in Wallis have four private bedrooms,one-and-a-half bathrooms, a living room, a kitchen
+          and a storage closet. Suites in Wallis Hall have either two private bedrooms or four private bedrooms, a full
+          bathroom and a living area.
+        </div>
+      </div>
+    </div>
 
- <div class="Witherspoon">
-  <h2 class='BuildingName' id="Witherspoon"> Witherspoon Hall</h2>
-    <img class="WitherspoonHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Witherspoon%20Hall/General/Witherspoon%2C%20Exterior%201.jpg" alt="Witherspoon Hall ">
- </div>
+   <div id="container" class="Witherspoon">
+    <h2 class='BuildingName' id="Witherspoon"> Witherspoon Hall</h2>
+      <img id="image" class="WitherspoonHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Witherspoon%20Hall/General/Witherspoon%2C%20Exterior%201.jpg" alt="Witherspoon Hall ">
+      <div class="middle">
+        <div class="text">
+          Witherspoon Hall, which opened in 1990, offers unique opportunities for cultural and academic
+          engagement. With the International House on the second floor, it's one of the most diverse residential communities.
+           It is also home to the Transfer Student Learning Community. Witherspoon offers suites and apartment style living options.
+            It features a community kitchen on the second floor, and laundry and vending facilities available on the first floor.
+        </div>
+      </div>
+   </div>
 </div>
 
 
   <h1 class="title2"> South Village</h1>
 <div class="grid-container">
-    <div class="Holshouser">
+    <div id="container" class="Holshouser">
     <h2 class='BuildingName' id="Holshouser"> Holshouser Hall</h2>
-      <img class="HolshouserHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Holshouser%20Hall/General/Holshouser%2C%20Exterior%201.jpg" alt="Holshouser Hall">
+      <img id="image" class="HolshouserHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Holshouser%20Hall/General/Holshouser%2C%20Exterior%201.jpg" alt="Holshouser Hall">
+      <div class="middle">
+        <div class="text">
+          Holshouser Hall was rennovated and reconfigured completely in 2015. Holshouser Hall offers traditional-style
+           doubles featuring two private bathrooms for every three rooms, and suites with two double-occupancy bedrooms, a living room
+           and bathroom. Each floor features multiple lounge and study spaces. Holshouser also offers male and female rooms on all floors.
+            It is the only tower on campus with single user bathrooms which allows for additional flexibility with room assignments.
+        </div>
+      </div>
     </div>
 
-    <div class="Hunt">
+    <div id="container" class="Hunt">
     <h2 class='BuildingName' id="Hunt"> Hunt Hall</h2>
-      <img class="HuntHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Holshouser%20Hall/Hunt%2C%20Exterior%201.jpg" alt="Hunt Hall">
+      <img id="image" class="HuntHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Holshouser%20Hall/Hunt%2C%20Exterior%201.jpg" alt="Hunt Hall">
+      <div class="middle">
+        <div class="text">
+          Hunt Hall, which opened in 2013, is a suite-style housing option in South Village. Suites in Hunt have either two
+           or four private bedrooms, a bathroom and a living room. Hunt also features conveniently placed study rooms, game room, community
+           lounges, an atrium with a piano, a welcoming courtyard and outdoor patio area.
+        </div>
+      </div>
     </div>
 
-    <div class="Laurel">
+    <div id="container" class="Laurel">
     <h2 class='BuildingName' id="Laurel"> Laurel Hall</h2>
-      <img class="LaurelHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Laurel%20Hall/General/Laurel%2C%20Exterior%201.jpg" alt="Laurel Hall">
+      <img id="image" class="LaurelHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Laurel%20Hall/General/Laurel%2C%20Exterior%201.jpg" alt="Laurel Hall">
+      <div class="middle">
+        <div class="text">
+          Laurel Hall, which opened in 2015, is a suite-style housing option in South Village for freshmen. Laurel offers a
+          variety of suite layouts that gives residents the opportunity to share living and bathroom space. Laurel features
+          a classroom, gaming area, community lounges, community kitchens and central laundry facilities on each floor.
+        </div>
+      </div>
     </div>
 
-    <div class="Levine">
+    <div id="container" class="Levine">
     <h2 class='BuildingName' id="Levine"> Levine Hall</h2>
-      <img class="LevineHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Levine%20Hall/General/Levine%2C%20Exterior%202.jpg" alt="Levine Hall">
+      <img id="image" class="LevineHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Levine%20Hall/General/Levine%2C%20Exterior%202.jpg" alt="Levine Hall">
+      <div class="middle">
+        <div class="text">
+          Levine Hall, named in honor of Sandra and Leon Levine, opened in 2016. In addition to more than 400 students,
+          Levine Hall houses students of the Levine Scholars Program and the Honors College, as well as administrative
+          offices for the two programs. Student work-study areas, faculty work stations, private one-on-one spaces and
+          adjacent seminar spaces that can be combined for large functions will be some of the many features of this building.
+          Levine also provides a variety of housing options, including suite and apartment style living.
+        </div>
+      </div>
     </div>
 
-    <div class="Sanford">
+    <div id="container" class="Sanford">
     <h2 class='BuildingName' id="Sanford"> Sanford Hall</h2>
-      <img class="SanfordHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Sanford%20Hall/General/Sanford%2C%20Exterior%201_0.jpg" alt="Sanford Hall">
+      <img id="image" class="SanfordHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Sanford%20Hall/General/Sanford%2C%20Exterior%201_0.jpg" alt="Sanford Hall">
+      <div class="middle">
+        <div class="text">
+          Sanford Hall, which opened in 1969, is located in South Village right by SoVi Dining Hall. Sanford offers traditional
+           style rooms and floor community bathrooms that are shared by no more than twelve residents. Laundry facilities and a
+           community kitchen are available in the basement, and vending is available on the first floor.
+        </div>
+      </div>
     </div>
 
-    <div class="Scott">
+    <div id="container" class="Scott">
     <h2 class='BuildingName' id="Scott"> Scott Hall</h2>
-      <img class="ScottHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Scott%20Hall/General/Scott%2C%20Exterior%201.jpg" alt="Scott Hall">
+      <img id="image" class="ScottHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Scott%20Hall/General/Scott%2C%20Exterior%201.jpg" alt="Scott Hall">
+      <div class="middle">
+        <div class="text">
+          Scott Hall, which was renovated in 2018, is a freshmen-only tower building in South Village that fosters a close-knit
+           community of students who reside in two-person rooms. Each floor features multiple lounge and study spaces, as well as,
+           spa-style community bathrooms and a single user bathroom for increased privacy. The first floor boasts a large kitchen,
+           group and private study rooms, a social lounge that includes game tables and televisions. Scott Hall is also the first hall
+            to feature a movie room with stadium reclining seats and an 80-inch television. Laundry facilities and vending are located in the basement.
+        </div>
+      </div>
     </div>
 </div>
 
   <h1 class="title3">East Village</h1>
 <div class="grid-container">
-    <div class="Elm">
+    <div id="container" class="Elm">
     <h2 class='BuildingName' id="Elm"> Elm Hall</h2>
-      <img class="ElmHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Elm%20Hall/General/Elm%2C%20Exterior%201.jpg" alt="Elm Hall">
+      <img id="image" class="ElmHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Elm%20Hall/General/Elm%2C%20Exterior%201.jpg" alt="Elm Hall">
+      <div class="middle">
+        <div class="text">
+          Elm Hall, which was renovated in 2017, offers a community of apartments for residents who are ready for a more independent
+          lifestyle. Apartments in Elm have four private bedrooms, a bathroom, a living room, a kitchen and a private washer and dryer.
+          Depending on the unit, residents will enjoy a balcony/terrace or additional living room space. In addition to completely renovated
+           apartments, residents also have access to a renovated community lounge, study space and gaming area in Maple Hall.
+        </div>
+      </div>
     </div>
 
-    <div class="Greek">
+    <div id="container" class="Greek">
     <h2 class='BuildingName' id="Greek"> Greek Village</h2>
-        <img class="GreekVillage" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Greek%20Village/General/Greek%2C%20Exterior%201.jpg" alt="Greek Village">
-    </div>
+        <img id="image" class="GreekVillage" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Greek%20Village/General/Greek%2C%20Exterior%201.jpg" alt="Greek Village">
+        <div class="middle">
+          <div class="text">
+            Each house has a large living/chapter room, dining room, office and full kitchen for common use and sleeps either 28 or 14 residents.
+             Common outdoor spaces serve as a centerpiece for the Greek Community and include a sand volleyball court and picnic pavillion, creating
+              a park-like setting for activities and events. In the houses occupied by Greek lettered organizations, residence is reserved for members
+               of the organization and live-in requirements vary per chapter.
+          </div>
+        </div>
+      </div>
 
-    <div class="Hawthorn">
+    <div id="container" class="Hawthorn">
     <h2 class='BuildingName' id="Hawthorn"> Hawthorn Hall</h2>
-        <img class="HawthornHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Hawthorn%20Hall/General/Hawthorn%2C%20Exterior%201_0.jpg" alt="Hawthorn Hall">
-    </div>
+        <img id="image" class="HawthornHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Hawthorn%20Hall/General/Hawthorn%2C%20Exterior%201_0.jpg" alt="Hawthorn Hall">
+        <div class="middle">
+          <div class="text">
+            Hawthorn Hall is home to the Engineering Learning Community. Residents of Hawthorn enjoy being a part of a close-knit community focused
+             on academic success in engineering and related math and science fields. Suites in Hawthorn Hall have two double bedrooms, a bathroom and
+              a living room for four residents. Laundry, vending and kitchen facilities are available in the basement.
+          </div>
+        </div>
+      </div>
 
-    <div class="Martin">
+    <div id="container" class="Martin">
     <h2 class='BuildingName' id="Martin"> Martin Hall</h2>
-        <img class="MartinHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Martin%20Hall/General/Martin%2C%20Exterior%201.jpg" alt="Martin Hall">
-    </div>
+        <img id="image" class="MartinHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Martin%20Hall/General/Martin%2C%20Exterior%201.jpg" alt="Martin Hall">
+        <div class="middle">
+          <div class="text">
+            Hawthorn Hall is home to the Engineering Learning Community. Residents of Hawthorn enjoy being a part of a close-knit community focused
+             on academic success in engineering and related math and science fields. Suites in Hawthorn Hall have two double bedrooms, a bathroom
+             and a living room for four residents. Laundry, vending and kitchen facilities are available in the basement.
+          </div>
+        </div>
+      </div>
 
-    <div class="Oak">
+    <div id="container" class="Oak">
     <h2 class='BuildingName' id="Oak"> Oak Hall</h2>
-        <img class="OakHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Oak%20Hall/General/Oak%2C%20Exterior%202.jpg" alt="Oak Hall">
-    </div>
+        <img id="image" class="OakHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Oak%20Hall/General/Oak%2C%20Exterior%202.jpg" alt="Oak Hall">
+        <div class="middle">
+          <div class="text">
+            Oak Hall, which was renovated in 2015, is located in East Village close to the academic center of campus and gives residents quick access
+             to classes, the Student Union and the Student Activity Center. Oak Hall offers suite style living options with two bedrooms, a bathroom
+             and a living room. Laundry, vending and kitchen facilities are located on the first floor. In addition, residents also have access to community
+              lounges, study spaces and gaming areas throughout the building.
+          </div>
+        </div>
+      </div>
 
-    <div class="Pine">
+    <div id="container" class="Pine">
     <h2 class='BuildingName' id="Pine"> Pine Hall</h2>
-        <img class="PineHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Pine%20Hall/General/Pine%2C%20Exterior%201.jpg" alt="Pine Hall">
+        <img id="image" class="PineHall" src="https://housing.uncc.edu/sites/housing.uncc.edu/files/residence_halls/Pine%20Hall/General/Pine%2C%20Exterior%201.jpg" alt="Pine Hall">
+        <div class="middle">
+          <div class="text">
+            Pine Hall, which was renovated in 2017, offers a community of apartments for residents who are ready for a more independent lifestyle.
+             Apartments in Pine have four private bedrooms, a bathroom, a living room, a kitchen and a private washer and dryer. Depending on the
+             unit, residents will enjoy a balcony/terrace or additional living room space. In addition to completely renovated apartments, residents
+              also have access to a renovated community lounge, study space and gaming area in Maple Hall.
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </div>
 </body>
 
