@@ -1,9 +1,14 @@
 body {
   margin: 0;
+  padding: 0px;
   overflow: auto;
 
   background-color: black;
   color:white;
+}
+html{
+  margin: 0px;
+  padding:0px;
 }
 #navbar{
   background-color: #00703C;
@@ -15,5 +20,13 @@ body {
 .mynav{
   color: #FFFFFF;
   font-size: 30px;
+}
+#mynav{
+  float:left;
+  margin-right: auto;
+}
 
+#buttons{
+  float: right;
+  margin-left: auto;
 }
