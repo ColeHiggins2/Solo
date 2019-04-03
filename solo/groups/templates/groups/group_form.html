@@ -2,14 +2,73 @@
 {% load bootstrap4 %}
 
 {% block group_content %}
-<div class="container">
-  <h4>Create A New Group</h4>
-  <form method="POST" action="{% url 'groups:create' %}" id="groupForm">
-  	{% csrf_token %}
-  	{% bootstrap_form form %}
-    {% buttons %}
-  		<button type="submit" class="btn btn-primary btn-large">Create</button>
-  	{% endbuttons %}
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width-device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>Create Group</title>
+	</head>
+
+	<style>
+
+	 body {
+	   background-color: #F5FFFA;
+
+	    }
+			.creategroup{
+					color: black;
+	        border-radius: 10px;
+	        background-color: #f2f2f2;
+					padding: 20px;
+					margin-top: 5%;
+					margin-left:15%;
+					height: 500px;
+					width: 1400px;
+			}
+			.btn{
+				background-color: #00703C;
+			}
+
+
+
+
+
+	footer{
+		color: white;
+		height: 50px;
+		background-color: #00703C;
+		font-weight: normal;
+		margin-bottom: 0px;
+		margin-top: 360px;
+    width: 100%;
+	}
+	.footer{
+		font-size: 20px;
+		text-align: center;
+		padding-top: 10px;
+		color: #27561C;
+		font-size: 1vw;
+	}
+
+	</style>
+
+	<body>
+    <div class="creategroup">
+      <h4>Create A New Group</h4>
+        <form method="POST" action="{% url 'groups:create' %}" id="groupForm">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% buttons %}
+            <button type="submit" class="btn btn-large bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH">Create</button>
+          {% endbuttons %}
+        </form>
+    </div>
+	</body>
+
+		<footer>
+			<h1 class="footer">&copy 2019|SOLO</h1>
+		</footer>
+	</html>
+
 {% endblock %}
