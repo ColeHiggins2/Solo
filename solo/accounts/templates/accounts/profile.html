@@ -1,6 +1,276 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <h1>{{user.username}}</h1>
 
-{% endblock %}
+
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <title>Profile</title>
+  </head>
+    <style>
+
+      body {
+      background-color: #F5FFFA;
+
+      }
+
+      #username{
+        color: black;
+        margin-left:7.75%;
+        font-weight: lighter;
+
+      }
+
+      #avatar{
+        border-radius: 50%;
+        width: 300px;
+        margin-left: 30px;
+        padding-top: 40px;
+      }
+
+      .info{
+        float: left;
+      }
+
+      #contact, #description{
+        float: left;
+      }
+      .questions{
+        color: black;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        height: 600px;
+        width: 500px;
+        font-size: 30px;
+        font-weight: lighter;
+
+            }
+
+        .questionform{
+          float: right;
+          margin-right: 40%;
+          margin-top: -55%;
+        }
+
+      ul li{
+        display: inline;
+      }
+
+      /* User Entry on profile page */
+        #description{
+          float:left;
+          padding-left: 20px;
+          height: 500px;
+          width: 700px;
+        }
+        #contact{
+          padding-left: 20px;
+          float:inherit;
+          padding-bottom: 10px;
+        }
+        #QuestionTitle{
+          color: black;
+
+        }
+        .ContactInfo{
+          color: black;
+        }
+        .Description{
+          color: black;
+        }
+
+        #radio{
+          padding: 200px;
+        }
+        .grid-container{
+          display: grid;
+          grid-template-columns: auto auto auto auto;
+
+
+        }
+        #yes{
+          grid-column: 2 / span 1;
+          grid-row: 1;
+        }
+        #maybe{
+          grid-column: 3 / span 1;
+          grid-row: 1;
+        }
+        #No{
+          grid-column: 4 / span 1;
+          grid-row: 1;
+        }
+
+        #one{
+          grid-column: 1 / span 1;
+          grid-row: 2;
+        }
+        #radio1{
+          grid-column: 2 / span 1;
+          grid-row: 2;
+        }
+        #radio2{
+          grid-column: 3 / span 1;
+          grid-row: 2;
+        }
+        #radio3{
+          grid-column: 4 / span 1;
+          grid-row: 2;
+        }
+
+      footer{
+        color: white;
+        height: 50px;
+        background-color: #00703C;
+        font-weight: normal;
+        margin-bottom: 0px;
+        margin-top: 725px;
+      }
+      .footer{
+        font-size: 20px;
+        text-align: center;
+        padding-top: 10px;
+        color: #27561C;
+        font-size: 1vw;
+      }
+    </style>
+
+
+
+
+
+    <body>
+
+
+      <div class="Info">
+        <img id="avatar" src="data:image/png;base64,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" alt="avatar">
+
+        <h1 id="username">{{user.username}}</h1>
+      </div>
+
+
+      <form action="/action_page.php" id="contact">
+          <div class="ContactInfo"> Contact Information:<br> </div>
+          <textarea  name="message" rows="5" cols="40"> </textarea>
+          <br>
+          <input type="submit" name="save">
+      </form>
+
+        <form action="/action_page.php" id="description">
+          <div class="Description"> Description:<br> </div>
+          <textarea name="message" rows="10" cols="40"> </textarea>
+          <br>
+          <input type="submit" name="save">
+        </form>
+
+
+      <div class="questionform">
+        <h1 id="QuestionTitle">Preference Questions:</h1>
+
+        <div class="grid-container">
+
+        <form class="questions">
+          <ul>
+          <li id="yes">Yes</li>
+          <li id="maybe">Maybe</li>
+          <li id="No">No</li>
+        </ul>
+        <div class="One">
+          <div id="one">Question 1:</div>
+          <input id="radio1" type="radio" name="question" value="Yes">
+          <input id="radio2" type="radio" name="question" value="Maybe">
+          <input id="radio3" type="radio" name="question" value="No">
+          <br>
+        </div>
+
+        <div class="Two">
+          Question 2:
+          <input type="radio" name="question" value="Yes">
+          <input type="radio" name="question" value="Maybe">
+          <input type="radio" name="question" value="No">
+          <br>
+        </div>
+        <div class="Three">
+
+          Question 3:
+          <input type="radio" name="question" value="Yes">
+          <input type="radio" name="question" value="Maybe">
+          <input type="radio" name="question" value="No">
+          <br>
+        </div>
+
+        <div class="Four">
+          Question 4:
+          <input type="radio" name="question" value="Yes">
+          <input type="radio" name="question" value="Maybe">
+          <input type="radio" name="question" value="No">
+          <br>
+        </div>
+
+        <div class="Five">
+          Question 5:
+          <input type="radio" name="question" value="Yes">
+          <input type="radio" name="question" value="Maybe">
+          <input type="radio" name="question" value="No">
+          <br>
+        </div>
+
+        <div class="Six">
+          Question 6:
+          <input type="radio" name="question" value="Yes">
+          <input type="radio" name="question" value="Maybe">
+          <input type="radio" name="question" value="No">
+          <br>
+        </div>
+
+        <div class="Seven">
+          Question 7:
+          <input type="radio" name="question" value="Yes">
+          <input type="radio" name="question" value="Maybe">
+          <input type="radio" name="question" value="No">
+          <br>
+        </div>
+
+        <div class="Eight">
+          Question 8:
+          <input type="radio" name="question" value="Yes">
+          <input type="radio" name="question" value="Maybe">
+          <input type="radio" name="question" value="No">
+          <br>
+        </div>
+
+        <div class="Nine">
+          Question 9:
+          <input type="radio" name="question" value="Yes">
+          <input type="radio" name="question" value="Maybe">
+          <input type="radio" name="question" value="No">
+          <br>
+        </div>
+
+        <div class="Ten">
+          Question 10:
+          <input type="radio" name="question" value="Yes">
+          <input type="radio" name="question" value="Maybe">
+          <input type="radio" name="question" value="No">
+          <br>
+        </div>
+
+        </form>
+      </div>
+      </div>
+
+    </body>
+
+
+    <footer>
+      <h1 class="footer">&copy 2019|SOLO</h1>
+    </footer>
+
+
+  </html>
+
+  {% endblock %}

@@ -3,12 +3,73 @@
 {% load bootstrap4 %}
 
 {% block post_content %}
-<h4>Create New Post</h4>
-<form method="POST" action="{% url 'posts:create' %}" id="postForm">
-	{% csrf_token %}
-	{% bootstrap_form form %}
-	{% buttons %}
-		<button type="submit" class="btn btn-primary btn-large">Post</button>
-	{% endbuttons %}
-</form>
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width-device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>Post</title>
+	</head>
+
+	<style>
+
+	 body {
+	   background-color: #F5FFFA;
+
+	    }
+			.createpost{
+					color: black;
+	        border-radius: 10px;
+	        background-color: #f2f2f2;
+					padding: 20px;
+					margin-top: 5%;
+					margin-left:11%;
+					height: 500px;
+					width: 1500px;
+			}
+			.btn{
+				background-color: #00703C;
+			}
+
+
+
+
+
+	footer{
+		color: white;
+		height: 50px;
+		background-color: #00703C;
+		font-weight: normal;
+		margin-bottom: 0px;
+		margin-top: 375px;
+
+	}
+	.footer{
+		font-size: 20px;
+		text-align: center;
+		padding-top: 10px;
+		color: #27561C;
+		font-size: 1vw;
+	}
+
+	</style>
+
+	<body>
+		<div class="createpost">
+			<h4>Create New Post</h4>
+				<form method="POST" action="{% url 'posts:create' %}" id="postForm">
+					{% csrf_token %}
+					{% bootstrap_form form %}
+					{% buttons %}
+						<button type="submit" class="btn  btn-large bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH">Post</button>
+					{% endbuttons %}
+				</form>
+		</div>
+	</body>
+
+		<footer>
+			<h1 class="footer">&copy 2019|SOLO</h1>
+		</footer>
+	</html>
 {% endblock %}
