@@ -2,14 +2,77 @@
 {% load bootstrap4 %}
 
 {% block content %}
-<div class="container">
-  <h1>Login</h1>
-  <form method="POST" class="form">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% buttons %}
-      <button type="submit" class="btn btn-primary">Login</button>
-    {% endbuttons %}
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Login Page</title>
+  </head>
+  <style>
+
+    body {
+  background-color: #F5FFFA;
+    }
+  form{
+    color: black;
+    font-weight: lighter;
+  }
+    h1{
+      color: black;
+      font-weight: lighter;
+      text-align: center;
+    }
+    .btn{
+      background-color: #00703C;
+    }
+
+    .Login{
+      height: 300px;
+      width: 1000px;
+      margin-top: 10%;
+      margin-left: 25%;
+    }
+
+    footer{
+      color: white;
+      height: 50px;
+      background-color: #00703C;
+      font-weight: normal;
+      margin-top: 25%;
+    }
+    .footer{
+      font-size: 20px;
+      text-align: center;
+      padding-top: 10px;
+      color: #27561C;
+      font-size: 1vw;
+    }
+
+  </style>
+
+  <body>
+    <div class="Login">
+      <h1>Login</h1>
+        <form method="POST" class="form">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          {% buttons %}
+          <button type="submit" class="btn bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH">Login</button>
+          {% endbuttons %}
+        </form>
+    </div>
+  </body>
+
+  <footer>
+    <h1 class="footer">&copy 2019|SOLO</h1>
+  </footer>
+
+</html>
+
+
+
+
+
+
 {% endblock %}

@@ -1,36 +1,88 @@
 {% extends "groups/group_base.html" %}
 
 {% block pregroup %}
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style >
 
-  <h1>{{group.name}}</h1>
-  <h2> Member Count: {{group.members.count}}</h2>
+    body {
+  background-color: #F5FFFA;
+  color: black;
+    }
 
-  <div class="content">
-  	{% if user in group.members.all %}
-  		<a href="{% url 'groups:leave' slug=group.slug %}"
-      class="btn btn-lg btn-warning"><span
-      class="fa fa-times-circle-o"></span> Leave</a>
-  	{% else %}
-  		<a href="{% url 'groups:join' slug=group.slug %}"
-      class="btn btn-lg btn-warning"><span
-      class="fa fa-check-circle-o"></span> Join</a>
-  	{% endif %}
+    .all{
+      margin: 5%;
+    }
+    /* h1{
+      margin: 5%;
+    } */
 
-  </div>
-{% endblock %}
+    .btn{
+      background-color: #00703C;
+    }
 
-{% block group_content %}
+      footer{
+          color: white;
+          height: 50px;
+          background-color: #00703C;
+          font-weight: normal;
+          margin-top: 37.25%;
+          width: 100%;
+        }
+      .footer{
+          font-size: 20px;
+          text-align: center;
+          padding-top: 10px;
+          color: #27561C;
+          font-size: 1vw;
+        }
 
-<div class="col-md-8">
-	{% if group.posts.count == 0 %}
-	<h2>No posts in this group yet!</h2>
 
-	{% else %}
+  </style>
 
-		{% for post in group.posts.all %}
-			{% include "posts/_post.html" %}
-		{% endfor %}
+  <body>
+<div class="all">
 
-	{% endif %}
-</div>
+      <h1>{{group.name}}</h1><br>
+      <h2> Member Count: {{group.members.count}}</h2>
+      <div class="content">
+      	{% if user in group.members.all %}
+      		<a href="{% url 'groups:leave' slug=group.slug %}"
+          class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH"><span
+          class="fa fa-times-circle-o"></span> Leave</a>
+      	{% else %}
+      		<a href="{% url 'groups:join' slug=group.slug %}"
+          class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH"><span
+          class="fa fa-check-circle-o"></span> Join</a>
+      	{% endif %}
+      </div>
+    {% endblock %}
+
+    {% block group_content %}
+
+    <div class="col-md-8">
+    	{% if group.posts.count == 0 %}
+    	<h2>No posts in this group yet!</h2>
+
+    	{% else %}
+
+    		{% for post in group.posts.all %}
+    			{% include "posts/_post.html" %}
+    		{% endfor %}
+
+    	{% endif %}
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <h1 class="footer">&copy 2019|SOLO</h1>
+  </footer>
+
+</html>
 {% endblock %}
