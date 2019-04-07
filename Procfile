@@ -1,1 +1,1 @@
-web: gunicorn solo.wsgi
+web: gunicorn solo.wsgi --log-file -
