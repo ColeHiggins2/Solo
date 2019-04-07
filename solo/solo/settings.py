@@ -28,7 +28,7 @@ SECRET_KEY = '&#qi#e5r#ef8b45l6aqmxp*hxr%l3)0sh_&4qx3otd!&q_hd20'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['solo-uncc.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -126,7 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
@@ -136,8 +136,8 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'test'
 LOGOUT_REDIRECT_URL = 'thanks'
 
-import django_heroku
-django_heroku.settings(locals())
+#import django_heroku
+#django_heroku.settings(locals())
 
 # Activate Django-Heroku.
 #django_heroku.settings(locals())
