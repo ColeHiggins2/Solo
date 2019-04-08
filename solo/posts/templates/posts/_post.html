@@ -1,22 +1,93 @@
-<div class="media">
-	<h3 class="mr-5"><a href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></h3>
+<!-- {% block post_content %} -->
 
-	<div class="media-body">
-		<strong>{{ post.user.username }}</strong>
-		<h5>{{ post.message_html|safe }}</h5>
-			<time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
-			{% if post.group %}
-			<span class="group-name">in <a href="#">{{ post.group.name }}</a></span>
-			{% endif %}
-		</h5>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width-device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>Posts</title>
+	</head>
 
-		<div class="media-footer">
-			{% if user.is_authenticated and post.user == user and not hide_delete %}
-				<a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
-					<span class="fa fa-remove text-danger" aria-hidden="true"></span>
-					<span class="text-danger icon-label">Delete</span>
-				</a>
-			{% endif %}
+	<style>
+		body {
+	 	 background-color: #F5FFFA;
+	 		}
+		.btn{
+			background-color: #00703C;
+			}
+		h5{
+			color: #00703C;
+		}
+		strong{
+			color: black;
+		}
+		#timestamp{
+			color: black;
+		}
+
+		.media{
+				color: black;
+				border-radius: 10px;
+				background-color: #f2f2f2;
+				padding: 20px;
+				margin-top: 5%;
+				margin-left:12%;
+				height: 150px;
+				width: 1400px;
+
+
+		}
+		#deletebtn{
+			float: right;
+			transform: translateY(-75%);
+			-ms-transform: translateY(-75%);
+		}
+
+		footer{
+			color: white;
+			height: 50px;
+			background-color: #00703C;
+			font-weight: normal;
+			margin-bottom: 0px;
+			margin-top: 44%;
+			}
+		.footer{
+			font-size: 20px;
+			text-align: center;
+			padding-top: 10px;
+			color: #27561C;
+			font-size: 1vw;
+			}
+
+
+	</style>
+
+	<body>
+		<div class="media">
+			<h3 class="mr-5"><a id="timestamp" ><img class="square account-img" src="{{ user.userprofileinfo.image.url }}" width="115" height="115"></a></h3>
+				<div class="media-body">
+					<strong>{{ post.user.username }}</strong>
+						<h5>{{ post.message_html|safe }}</h5>
+							<time class="time"><a id="timestamp" >{{ post.created_at }}</a></time>
+							{% if post.group %}
+							<span id="timestamp" class="group-name">in <a id="timestamp" >{{ post.group.name }}</a></span>
+							{% endif %}
+						</h5>
+				<!-- <div class="media-footer"> -->
+					{% if user.is_authenticated and post.user == user and not hide_delete %}
+						<a id="deletebtn" href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
+							<span class="fa fa-remove " aria-hidden="true"></span>
+							<span class="icon-label">Delete</span>
+						</a>
+					{% endif %}
+				<!-- </div> -->
+			</div>
 		</div>
-	</div>
-</div>
+	</body>
+
+	<!-- <footer>
+		<h1 class="footer">&copy 2019|SOLO</h1>
+	</footer> -->
+
+</html>
+<!-- {% endblock %} -->

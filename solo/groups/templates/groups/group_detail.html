@@ -11,28 +11,45 @@
   <style >
 
     body {
-  background-color: #F5FFFA;
-  color: black;
+      background-color: #F5FFFA;
+      color: black;
     }
 
     .all{
-      margin: 5%;
+      transform: translateX(10%);
+      -ms-transform: translateX(10%);
+      padding-top: 5%;
     }
-    /* h1{
-      margin: 5%;
-    } */
 
-    .btn{
+    #join-leave{
       background-color: #00703C;
+      float: right;
+      transform: translate(75%,-50%);
+      -ms-transform: translate(75%, -50%);
     }
 
+    .memCount{
+      font-weight: lighter;
+      transform: translate(10%,70%);
+      -ms-transform: translate(10%, 70%);
+    }
+
+    #groupname{
+      text-decoration: underline;
+      font-weight: lighter;
+      font-size: 50px;
+      transform: translate(10%,0%);
+      -ms-transform: translate(10%, 0%);
+    }
       footer{
           color: white;
           height: 50px;
           background-color: #00703C;
           font-weight: normal;
-          margin-top: 37.25%;
           width: 100%;
+          transform: translateY(600%);
+    			-ms-transform: translateY(600%);
+          position: relative;
         }
       .footer{
           font-size: 20px;
@@ -46,43 +63,42 @@
   </style>
 
   <body>
-<div class="all">
+      <div class="all">
+            <h1 id="groupname">{{group.name}}</h1><br>
+            <h2 class="memCount"> Member Count: {{group.members.count}}</h2>
+            <div class="content">
+            	{% if user in group.members.all %}
+            		<a id="join-leave" href="{% url 'groups:leave' slug=group.slug %}"
+                class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH"><span
+                class="fa fa-times-circle-o"></span> Leave</a>
+            	{% else %}
+            		<a id="join-leave" href="{% url 'groups:join' slug=group.slug %}"
+                class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH"><span
+                class="fa fa-check-circle-o"></span> Join</a>
+            	{% endif %}
+            </div>
+          {% endblock %}
 
-      <h1>{{group.name}}</h1><br>
-      <h2> Member Count: {{group.members.count}}</h2>
-      <div class="content">
-      	{% if user in group.members.all %}
-      		<a href="{% url 'groups:leave' slug=group.slug %}"
-          class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH"><span
-          class="fa fa-times-circle-o"></span> Leave</a>
-      	{% else %}
-      		<a href="{% url 'groups:join' slug=group.slug %}"
-          class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH"><span
-          class="fa fa-check-circle-o"></span> Join</a>
-      	{% endif %}
-      </div>
-    {% endblock %}
+          {% block group_content %}
 
-    {% block group_content %}
+          <div class="col-md-8">
+          	{% if group.posts.count == 0 %}
+          	<h2>No posts in this group yet!</h2>
 
-    <div class="col-md-8">
-    	{% if group.posts.count == 0 %}
-    	<h2>No posts in this group yet!</h2>
+          	{% else %}
 
-    	{% else %}
+          		{% for post in group.posts.all %}
+          			{% include "posts/_post.html" %}
+          		{% endfor %}
 
-    		{% for post in group.posts.all %}
-    			{% include "posts/_post.html" %}
-    		{% endfor %}
+          	{% endif %}
+            </div>
+          </div>
+        </body>
 
-    	{% endif %}
-      </div>
-    </div>
-  </body>
-
-  <footer>
-    <h1 class="footer">&copy 2019|SOLO</h1>
-  </footer>
+        <footer>
+          <h1 class="footer">&copy 2019|SOLO</h1>
+        </footer>
 
 </html>
 {% endblock %}
