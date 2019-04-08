@@ -1,1 +1,1 @@
-web: gunicorn solo.solo.wsgi --preload
+web: gunicorn solo.wsgi
