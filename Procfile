@@ -1,1 +1,1 @@
-web: gunicorn Solo.wsgi
+web: gunicorn solo.wsgi
