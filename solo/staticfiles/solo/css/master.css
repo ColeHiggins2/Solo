@@ -1,0 +1,23 @@
+#navbar{
+  background-color: #00703C;
+  height: 100px;
+  width: 100%;
+
+}
+.btn{
+  color: #FFFFFF;
+}
+.mynav{
+  color: #FFFFFF;
+  font-size: 30px;
+}
+#mynav{
+  float:left;
+  margin-right: auto;
+  font-size: 60px;
+}
+
+#buttons{
+  float: right;
+  margin-left: auto;
+}
