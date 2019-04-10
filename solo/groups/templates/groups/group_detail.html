@@ -21,6 +21,12 @@
       padding-top: 5%;
     }
 
+    #postbutton{
+      background-color: #00703C;
+      float: right;
+      transform: translate(75%,-50%);
+      -ms-transform: translate(75%, -50%);
+    }
     #join-leave{
       background-color: #00703C;
       float: right;
@@ -76,6 +82,11 @@
                 class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH"><span
                 class="fa fa-check-circle-o"></span> Join</a>
             	{% endif %}
+              {% if user.is_authenticated %}
+								<a id="postbutton" href="{% url 'posts:create' %}"
+                class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH" role="button"><span
+                class="fa fa-plus"></span> Post</a>
+							{% endif %}
             </div>
           {% endblock %}
 
