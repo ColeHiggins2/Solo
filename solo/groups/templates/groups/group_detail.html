@@ -6,7 +6,7 @@
   <head>
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title></title>
+    <title>Entered Group</title>
   </head>
   <style >
 
@@ -16,9 +16,9 @@
     }
 
     .all{
-      transform: translateX(10%);
-      -ms-transform: translateX(10%);
+      margin-left: 5%;
       padding-top: 5%;
+      margin-bottom: 10%;
     }
 
     #postbutton{
@@ -30,32 +30,47 @@
     #join-leave{
       background-color: #00703C;
       float: right;
-      transform: translate(75%,-50%);
-      -ms-transform: translate(75%, -50%);
+      margin-right: 15.5%;
+      clear:both;
+      transform: translateY(-50%);
     }
+    #description{
+      font-weight:normal;
+      margin-left: 9.5%;
 
+      transform: translateY(50%);
+    }
     .memCount{
       font-weight: lighter;
-      transform: translate(10%,70%);
-      -ms-transform: translate(10%, 70%);
+      margin-left: 9.5%;
+      clear:both;
+      transform: translateY(50%);
     }
 
     #groupname{
       text-decoration: underline;
       font-weight: lighter;
       font-size: 50px;
-      transform: translate(10%,0%);
-      -ms-transform: translate(10%, 0%);
+      margin-left: 9.5%;
     }
+
+    .no-post{
+      font-weight:lighter;
+      margin-left: 50%;
+      margin-top: 15%;
+      font-size: 50px;
+    }
+
       footer{
           color: white;
-          height: 50px;
           background-color: #00703C;
           font-weight: normal;
+          /* position: relative; */
+          position: fixed;
+          left: 0;
+          bottom: 0%;
           width: 100%;
-          transform: translateY(600%);
-    			-ms-transform: translateY(600%);
-          position: relative;
+
         }
       .footer{
           font-size: 20px;
@@ -71,6 +86,7 @@
   <body>
       <div class="all">
             <h1 id="groupname">{{group.name}}</h1><br>
+            <h4 id="description" class="mb-1"> {{ group.description_html|safe }}</h4>
             <h2 class="memCount"> Member Count: {{group.members.count}}</h2>
             <div class="content">
             	{% if user in group.members.all %}
@@ -94,7 +110,7 @@
 
           <div class="col-md-8">
           	{% if group.posts.count == 0 %}
-          	<h2>No posts in this group yet!</h2>
+          	<h2 class="no-post">No posts in this group yet!</h2>
 
           	{% else %}
 
@@ -105,11 +121,13 @@
           	{% endif %}
             </div>
           </div>
+
         </body>
 
         <footer>
           <h1 class="footer">&copy 2019|SOLO</h1>
         </footer>
+
 
 </html>
 {% endblock %}
