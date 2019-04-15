@@ -18,19 +18,13 @@
     margin-left: 1%;
     margin-top: 1%;
     float: left;
-    height: auto;
-    width: 15vw;
   }
     h1, h2, h3{
       color: black;
       font-weight: lighter;
       text-align: center;
+    }
 
-    }
-    h2, h3{
-      height: auto;
-      width: 15vw;
-    }
 
     .grid-container{
       grid-gap: 10px;
@@ -47,28 +41,28 @@
 
 
     footer{
-        color: white;
-        background-color: #00703C;
-        font-weight: normal;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-      }
+      color: white;
+      height: 50px;
+      background-color: #00703C;
+      font-weight: normal;
+      margin-top: 37.25%;
+    }
     .footer{
-        font-size: 20px;
-        text-align: center;
-        padding-top: 10px;
-        color: #27561C;
-        font-size: 1vw;
-      }
+      font-size: 20px;
+      text-align: center;
+      padding-top: 10px;
+      color: #27561C;
+      font-size: 1vw;
+    }
   </style>
 
   <body>
     <div class="grid-container">
           <div><img class="square account-img" src="{{ user.userprofileinfo.image.url }}" width="240"></div>
-              <div><h2 class="account-heading">{{ user.username }}</h2></div>
+              <div><h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2></div>
               <div><h3 class="text-secondary">{{ user.email }}</h3></div>
+              <p>Description: {{ user.userprofileinfo.bio }}</p>
+              <a href="{% url 'accounts:edit_profile' %}" class="btn btn-light btn-large">Edit</a>
     </div>
       <!-- FORM HERE -->
   </body>

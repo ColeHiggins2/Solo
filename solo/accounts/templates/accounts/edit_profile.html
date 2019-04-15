@@ -7,7 +7,7 @@
   <head>
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>Sign Up</title>
+    <title>Edit Profile</title>
   </head>
 
   <style>
@@ -54,13 +54,13 @@
   </style>
 
   <body>
-    <div class="signup">
-    <h1>Sign Up</h1>
-      <form method="POST" class="form">
+    <div class="edit_profile">
+    <h1>Edit Profile</h1>
+      <form enctype="multipart/form-data" method="POST" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
-          <button type="submit" class="btn bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH">Sign Up</button>
+          <button type="Save" class="btn bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH">Save</button>
         {% endbuttons %}
       </form>
     </div>
