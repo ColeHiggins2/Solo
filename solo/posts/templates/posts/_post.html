@@ -34,9 +34,8 @@
 				margin-left:12%;
 				height: 150px;
 				width: 1400px;
-
-
 		}
+
 		#deletebtn{
 			float: right;
 			transform: translateY(-75%);
@@ -62,28 +61,28 @@
 
 	</style>
 
-	<body>
-		<div class="media">
-			<h3 class="mr-5"><a id="timestamp" ><img class="square account-img" src="{{ user.userprofileinfo.image.url }}" width="115" height="115"></a></h3>
-				<div class="media-body">
-					<strong>{{ post.user.username }}</strong>
-						<h5>{{ post.message_html|safe }}</h5>
-							<time class="time"><a id="timestamp" >{{ post.created_at }}</a></time>
-							{% if post.group %}
-							<span id="timestamp" class="group-name">in <a id="timestamp" >{{ post.group.name }}</a></span>
-							{% endif %}
-						</h5>
-				<!-- <div class="media-footer"> -->
-					{% if user.is_authenticated and post.user == user and not hide_delete %}
-						<a id="deletebtn" href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
-							<span class="fa fa-remove " aria-hidden="true"></span>
-							<span class="icon-label">Delete</span>
-						</a>
-					{% endif %}
-				<!-- </div> -->
+		<body>
+			<div class="media">
+				<h3 class="mr-5"><a id="timestamp" ><img class="square account-img" src="{{ user.userprofileinfo.image.url }}" width="115" height="115"></a></h3>
+					<div class="media-body">
+						<strong>{{ post.user.username }}</strong>
+							<h5>{{ post.message_html|safe }}</h5>
+								<time class="time"><a id="timestamp" >{{ post.created_at }}</a></time>
+								{% if post.group %}
+								<span id="timestamp" class="group-name">in <a id="timestamp" >{{ post.group.name }}</a></span>
+								{% endif %}
+							</h5>
+					<!-- <div class="media-footer"> -->
+						{% if user.is_authenticated and post.user == user and not hide_delete %}
+							<a id="deletebtn" href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
+								<span class="fa fa-remove " aria-hidden="true"></span>
+								<span class="icon-label">Delete</span>
+							</a>
+						{% endif %}
+					<!-- </div> -->
+				</div>
 			</div>
-		</div>
-	</body>
+		</body>
 
 	<!-- <footer>
 		<h1 class="footer">&copy 2019|SOLO</h1>
