@@ -1,9 +1,8 @@
 from django.contrib.auth import login, logout
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from . import forms
-from . import models 
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import(
     LoginRequiredMixin,
@@ -17,3 +16,11 @@ class SignUp(CreateView):
 
 class UserProfileInfo(LoginRequiredMixin, TemplateView):
     template_name = 'accounts/profile.html'
+
+class Profile_Edit(UpdateView):
+    fields = ['image', 'bio']
+    template_name = 'accounts/edit_profile.html'
+    success_url = reverse_lazy('accounts:profile')
+
+    def get_object(self):
+        return self.request.user.userprofileinfo
