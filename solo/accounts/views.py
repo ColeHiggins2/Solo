@@ -24,3 +24,11 @@ class Profile_Edit(UpdateView):
 
     def get_object(self):
         return self.request.user.userprofileinfo
+
+class SurveyCreation(UpdateView):
+    fields = ['favorites']
+    success_url = reverse_lazy('accounts:survey')
+    template_name = 'accounts/survey.html'
+
+    def get_object(self):
+        return self.request.user.userprofileinfo
