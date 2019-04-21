@@ -60,10 +60,11 @@
     <div class="grid-container">
       {% for user in users %}
       <div><img class="square account-img" src="{{ user.image.url }}" width="240"></div>
-      <div><h2 class="account-heading">{{ user.user }}</h2></div>
+      <div><h2 class="account-heading">{{ user.user.first_name }} {{ user.user.last_name }}</h2></div>
       <div><h3 class="text-secondary">{{ user.email }}</h3></div>
       <p>Description: {{ user.bio }}</p>
       <p>Favorites: {{ user.favorites }}</p>
+
 
 
       {% endfor %}
