@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
 from . import forms
+from accounts.forms import PeopleForm
+from accounts.models import UserProfileInfo as UserProfileInfoModel
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import(
     LoginRequiredMixin,
@@ -16,6 +18,18 @@ class SignUp(CreateView):
 
 class UserProfileInfo(LoginRequiredMixin, TemplateView):
     template_name = 'accounts/profile.html'
+
+class People(TemplateView):
+    template_name = 'accounts/people.html'
+    success_url = reverse_lazy('accounts:people')
+
+    def get(self, request):
+        form = PeopleForm()
+        users = UserProfileInfoModel.objects.all()
+        args = {'form': form, 'users': users}
+        return render(request, self.template_name, args)
+
+
 
 class Profile_Edit(UpdateView):
     fields = ['image', 'bio']

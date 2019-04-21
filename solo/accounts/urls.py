@@ -11,6 +11,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(),name='logout'),
     path('signup/',views.SignUp.as_view(),name='signup'),
     path('profile/',views.UserProfileInfo.as_view(),name='profile'),
+    path('people/',views.People.as_view(),name='people'),
     path('profile/edit/',views.Profile_Edit.as_view(),name='edit_profile'),
     path('profile/survey/',views.SurveyCreation.as_view(),name='survey')
     ]

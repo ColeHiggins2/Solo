@@ -28,7 +28,7 @@
         <a class='navbar-brand mynav ' href="{% url 'home' %}" id='mynav' > SOLO </a>
         <ul class='navbar-nav'>
           {% if user.is_authenticated %}
-            <li><a href="#" class ='btn btn-simple'>People</a></li>
+            <li><a href="{% url 'accounts:people' %}" class ='btn btn-simple'>People</a></li>
             <!-- <li><a href="{% url 'posts:create' %}" class ='btn btn-simple'>Post</a></li> -->
             <li><a href="{% url 'groups:all'  %}" class ='btn btn-simple'>Groups</a></li>
             <!-- <li><a href="{% url 'groups:create' %}" class ='btn simple'>Create Group</a></li> -->

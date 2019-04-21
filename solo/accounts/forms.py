@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 from django.contrib.auth.models import User
 from .models import UserProfileInfo
-#from .models import UserSurveyInfo
+from accounts.models import UserProfileInfo
 from django import forms
 
 
@@ -20,7 +20,16 @@ class UserCreateForm(UserCreationForm):
         self.fields['first_name'].label = 'First Name'
         self.fields['last_name'].label = 'Last Name'
 
-
+class PeopleForm(forms.Form):
+    user = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class': 'form-control',
+            'placeholder': 'Write a post...'
+        }
+    ))
+    class Meta:
+        model = UserProfileInfo
+        fields = ('user')
 
 """class UserSurveyForm(forms.Form):
 

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>People</title>
+  </head>
+  <style>
+
+    body {
+  background-color: #F5FFFA;
+    }
+
+  .square{
+    border-radius: 50%;
+    margin-left: 1%;
+    margin-top: 1%;
+    float: left;
+  }
+    h1, h2, h3{
+      color: black;
+      font-weight: lighter;
+      text-align: center;
+    }
+
+
+    .grid-container{
+      grid-gap: 10px;
+      display: grid;
+      grid-template-columns: auto;
+      padding: 10px;
+      width: 10%;
+    }
+
+
+    .btn{
+      background-color: #00703C;
+    }
+
+
+    footer{
+      color: white;
+      height: 50px;
+      background-color: #00703C;
+      font-weight: normal;
+      margin-top: 37.25%;
+    }
+    .footer{
+      font-size: 20px;
+      text-align: center;
+      padding-top: 10px;
+      color: #27561C;
+      font-size: 1vw;
+    }
+  </style>
+
+  <body>
+    <div class="grid-container">
+      {% for user in users %}
+      <div><img class="square account-img" src="{{ user.image.url }}" width="240"></div>
+      <div><h2 class="account-heading">{{ user.user }}</h2></div>
+      <div><h3 class="text-secondary">{{ user.email }}</h3></div>
+      <p>Description: {{ user.bio }}</p>
+      <p>Favorites: {{ user.favorites }}</p>
+
+
+      {% endfor %}
+
+    </div>
+      <!-- FORM HERE -->
+  </body>
+
+    <footer>
+      <h1 class="footer">&copy 2019|SOLO</h1>
+    </footer>
+
+</html>
+
+
+
+{% endblock content %}
