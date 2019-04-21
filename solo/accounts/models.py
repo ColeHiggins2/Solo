@@ -16,6 +16,7 @@ class UserProfileInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     bio = models.TextField(max_length=1000, blank=True)
+    favorites = models.TextField(max_length = 100, blank = True)
 
 
     def __str__(self):
@@ -26,3 +27,8 @@ def create_profile(sender, **kwargs):
         user_profile = UserProfileInfo.objects.create(user=kwargs['instance'])
 
 post_save.connect(create_profile, sender=User)
+
+#User = get_user_model()
+#class UserSurveyInfo(models.Model):
+#    username = models.TextField(max_length=20, blank=True)
+#    favorites = models.TextField(max_length=100, blank=True)

@@ -62,7 +62,10 @@
               <div><h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2></div>
               <div><h3 class="text-secondary">{{ user.email }}</h3></div>
               <p>Description: {{ user.userprofileinfo.bio }}</p>
+              <p>Favorites: {{ user.userprofileinfo.favorites }}</p>
               <a href="{% url 'accounts:edit_profile' %}" class="btn btn-light btn-large">Edit</a>
+              <a href="{% url 'accounts:survey' %}" class="btn btn-light btn-large">Survey</a>
+
     </div>
       <!-- FORM HERE -->
   </body>

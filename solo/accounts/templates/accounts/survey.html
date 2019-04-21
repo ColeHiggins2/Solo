@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Survey</title>
+  </head>
+
+  <style>
+
+    body {
+      background-color: #F5FFFA;
+    }
+    .signup{
+      height: 300px;
+      width: 1000px;
+      margin-top: 10%;
+      margin-left: 25%;
+
+    }
+
+    h1{
+      color: black;
+      font-weight: lighter;
+      text-align: center;
+    }
+    .btn{
+      background-color: #00703C;
+    }
+
+    form{
+      color: black;
+      font-weight: lighter;
+    }
+
+    footer{
+      color: white;
+      height: 50px;
+      background-color: #00703C;
+      font-weight: normal;
+      margin-top: 25%;
+    }
+    .footer{
+      font-size: 20px;
+      text-align: center;
+      padding-top: 10px;
+      color: #27561C;
+      font-size: 1vw;
+    }
+  </style>
+
+  <body>
+    <div class="survey">
+    <h1>Survey</h1>
+      <form enctype="multipart/form-data" method="POST" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+          <button type="Save" class="btn bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH">Save</button>
+        {% endbuttons %}
+      </form>
+    </div>
+  </body>
+
+  <footer>
+    <h1 class="footer">&copy 2019|SOLO</h1>
+  </footer>
+
+</html>
+
+
+
+
+{% endblock %}
