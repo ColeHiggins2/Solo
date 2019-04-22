@@ -30,7 +30,7 @@ class People(TemplateView):
 
 
 class Profile_Edit(UpdateView):
-    fields = ['image', 'bio']
+    fields = ['image', 'bio','age', 'gender', 'class_year']
     template_name = 'accounts/edit_profile.html'
     success_url = reverse_lazy('accounts:profile')
 
@@ -38,8 +38,8 @@ class Profile_Edit(UpdateView):
         return self.request.user.userprofileinfo
 
 class SurveyCreation(UpdateView):
-    fields = ['favorites']
-    success_url = reverse_lazy('accounts:survey')
+    fields = ['smoking','bed','dorm']
+    success_url = reverse_lazy('accounts:profile')
     template_name = 'accounts/survey.html'
 
     def get_object(self):

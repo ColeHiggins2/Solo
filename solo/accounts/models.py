@@ -16,7 +16,54 @@ class UserProfileInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     bio = models.TextField(max_length=1000, blank=True)
-    favorites = models.TextField(max_length = 100, blank = True)
+    CLASS_YEAR = (
+        ('FR', 'Freshman'),
+        ('SO', 'Sophomore'),
+        ('JR', 'Junior'),
+        ('SR', 'Senior'),
+        ('UU', 'Unspecified'),
+    )
+    class_year = models.CharField(max_length = 2, choices = CLASS_YEAR, default = 'UU')
+    age = models.IntegerField(max_length=2, blank = False, default = 0)
+    GENDER = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('U', 'Unspecified'),
+    )
+    gender = models.CharField(max_length = 1, choices = GENDER, default = 'U')
+    #favorites = models.TextField(max_length = 100, blank = True)
+    SMOKING = (
+        ('Y', 'Smoking'),
+        ('N', 'No Smoking'),
+    )
+    smoking = models.CharField(max_length=1, choices=SMOKING, default = 'U')
+    BED = (
+        ('U', 'Unspecified'),
+        ('E', 'Early Riser'),
+        ('L', 'Late Riser'),
+    )
+    bed = models.CharField(max_length = 1, choices=BED, default = 'U')
+    DORM = (
+        ('UU', 'Unspecified'),
+        ('BE', 'Belk Hall'),
+        ('EL', 'Elm Hall'),
+        ('GR', 'Greek Village'),
+        ('HA', 'Hawthorn Hall'),
+        ('HO', 'Holshouser Hall'),
+        ('HU', 'Hunt Hall'),
+        ('LA', 'Laurel Hall'),
+        ('LE', 'Levine Hall'),
+        ('LY', 'Lynch Hall'),
+        ('MA', 'Martin Hall'),
+        ('WI', 'Witherspoon Hall'),
+        ('MI', 'Miltimore Hall'),
+        ('OA', 'Oak Hall'),
+        ('PI', 'Pine Hall'),
+        ('SC', 'Scott Hall'),
+        ('WA', 'Wallis Hall'),
+        ('SA', 'Sanford Hall'),
+    )
+    dorm = models.CharField(max_length=2, choices=DORM, default = 'UU')
 
 
     def __str__(self):
