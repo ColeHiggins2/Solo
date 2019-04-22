@@ -1,5 +1,5 @@
+<!-- WHEN YOU ENTER INTO A GROUPS PAGE (JOIN/LEAVE/POST) -->
 {% extends "groups/group_base.html" %}
-
 {% block pregroup %}
 <!DOCTYPE html>
 <html lang="" dir="ltr">
@@ -24,9 +24,10 @@
     #postbutton{
       background-color: #00703C;
       float: right;
-      transform: translate(75%,-50%);
-      -ms-transform: translate(75%, -50%);
+      transform: translate(-10%,-50%);
+      -ms-transform: translate(-10%, -50%);
     }
+
     #join-leave{
       background-color: #00703C;
       float: right;
@@ -34,16 +35,10 @@
       clear:both;
       transform: translateY(-50%);
     }
+
     #description{
       font-weight:normal;
       margin-left: 9.5%;
-
-      transform: translateY(50%);
-    }
-    .memCount{
-      font-weight: lighter;
-      margin-left: 9.5%;
-      clear:both;
       transform: translateY(50%);
     }
 
@@ -53,6 +48,12 @@
       font-size: 50px;
       margin-left: 9.5%;
     }
+    .memCount{
+      font-weight: lighter;
+      margin-left: 9.5%;
+      clear:both;
+      transform: translateY(50%);
+    }
 
     .no-post{
       font-weight:lighter;
@@ -61,73 +62,63 @@
       font-size: 50px;
     }
 
+    .footer{
+        font-size: 20px;
+        text-align: center;
+        padding-top: 10px;
+        color: #27561C;
+        font-size: 1vw;
+      }
+
       footer{
           color: white;
           background-color: #00703C;
           font-weight: normal;
-          /* position: relative; */
           position: fixed;
           left: 0;
           bottom: 0%;
           width: 100%;
-
         }
-      .footer{
-          font-size: 20px;
-          text-align: center;
-          padding-top: 10px;
-          color: #27561C;
-          font-size: 1vw;
-        }
-
 
   </style>
 
   <body>
-      <div class="all">
-            <h1 id="groupname">{{group.name}}</h1><br>
-            <h4 id="description" class="mb-1"> {{ group.description_html|safe }}</h4>
-            <h2 class="memCount"> Member Count: {{group.members.count}}</h2>
-            <div class="content">
-            	{% if user in group.members.all %}
-            		<a id="join-leave" href="{% url 'groups:leave' slug=group.slug %}"
+  <div class="all">
+    <h1 id="groupname">{{group.name}}</h1><br>
+      <h4 id="description" class="mb-1"> {{ group.description_html|safe }}</h4>
+        <h2 class="memCount"> Member Count: {{group.members.count}}</h2>
+          <div class="content">
+          	{% if user in group.members.all %}
+                <a id="join-leave" href="{% url 'groups:leave' slug=group.slug %}"
                 class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH"><span
                 class="fa fa-times-circle-o"></span> Leave</a>
-            	{% else %}
-            		<a id="join-leave" href="{% url 'groups:join' slug=group.slug %}"
+          	{% else %}
+                <a id="join-leave" href="{% url 'groups:join' slug=group.slug %}"
                 class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH"><span
                 class="fa fa-check-circle-o"></span> Join</a>
-            	{% endif %}
+          	{% endif %}
               {% if user.is_authenticated %}
-								<a id="postbutton" href="{% url 'posts:create' %}"
+                <a id="postbutton" href="{% url 'posts:create' %}"
                 class="btn btn-lg bg-965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH" role="button"><span
                 class="fa fa-plus"></span> Post</a>
-							{% endif %}
-            </div>
-          {% endblock %}
-
-          {% block group_content %}
-
-          <div class="col-md-8">
-          	{% if group.posts.count == 0 %}
-          	<h2 class="no-post">No posts in this group yet!</h2>
-
-          	{% else %}
-
-          		{% for post in group.posts.all %}
-          			{% include "posts/_post.html" %}
-          		{% endfor %}
-
-          	{% endif %}
-            </div>
+              {% endif %}
           </div>
 
-        </body>
+      {% endblock %}
+    {% block group_content %}
 
-        <footer>
-          <h1 class="footer">&copy 2019|SOLO</h1>
-        </footer>
+    <div class="col-md-8">
+      {% if group.posts.count == 0 %}
+        <h2 class="no-post">No posts in this group yet!</h2>
+          {% else %}
+            {% for post in group.posts.all %}
+          {% include "posts/_post.html" %}
+        {% endfor %}
+      {% endif %}
+    </div>
 
+      </div>
+    </body>
+  </html>
 
-</html>
-{% endblock %}
+  {% endblock %}
