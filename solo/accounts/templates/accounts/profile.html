@@ -9,22 +9,24 @@
   </head>
   <style>
 
-    body {
-  background-color: #F5FFFA;
+    body{
+      background-color: #F5FFFA;
     }
 
-  .square{
-    border-radius: 50%;
-    margin-left: 1%;
-    margin-top: 1%;
-    float: left;
-  }
+    img{
+      border-radius: 50%;
+      margin-left: 1%;
+      margin-top: 1%;
+      float: left;
+      height: 12vw;
+      width: 10vw;
+    }
+
     h1, h2, h3{
       color: black;
       font-weight: lighter;
       text-align: center;
     }
-
 
     .grid-container{
       grid-gap: 10px;
@@ -38,7 +40,6 @@
     .btn{
       background-color: #00703C;
     }
-
 
     footer{
       color: white;
@@ -54,11 +55,14 @@
       color: #27561C;
       font-size: 1vw;
     }
+
   </style>
 
   <body>
     <div class="grid-container">
-          <div><img class="square account-img" src="{{ user.userprofileinfo.image.url }}" width="240"></div>
+          <div>
+            <img src="{{ user.userprofileinfo.image.url }}" >
+          </div>
               <div><h2 class="account-heading">{{ user.first_name }} {{ user.last_name }}</h2></div>
               <p>Description: {{ user.userprofileinfo.bio }}</p>
               <p>Age: {{ user.userprofileinfo.age }}</p>
@@ -69,13 +73,8 @@
               <a href="{% url 'accounts:survey' %}" class="btn btn-light btn-large">Edit Survey</a>
 
     </div>
-      <!-- FORM HERE -->
+        <!-- FORM HERE -->
   </body>
-
-    <footer>
-      <h1 class="footer">&copy 2019|SOLO</h1>
-    </footer>
-
 </html>
 
 
