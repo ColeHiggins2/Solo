@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 
 import os
-<<<<<<< HEAD
+
 #import django_heroku
-=======
+
 # import django_heroku
->>>>>>> f945fc3659ec68a1f0e9712ec2555b60a29e1b65
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -142,11 +142,11 @@ LOGIN_REDIRECT_URL = 'test'
 LOGOUT_REDIRECT_URL = 'thanks'
 
 #import django_heroku
-<<<<<<< HEAD
+
 #django_heroku.settings(locals())
-=======
+
 # django_heroku.settings(locals())
->>>>>>> f945fc3659ec68a1f0e9712ec2555b60a29e1b65
+
 
 # Activate Django-Heroku.
 #django_heroku.settings(locals())
