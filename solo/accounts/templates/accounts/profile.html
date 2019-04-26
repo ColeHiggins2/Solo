@@ -68,7 +68,11 @@
               <p>Age: {{ user.userprofileinfo.age }}</p>
               <p>Gender: {{ user.userprofileinfo.get_gender_display }}</p>
               <p>Smoking: {{ user.userprofileinfo.get_smoking_display }}</p>
+<<<<<<< HEAD
+              <p>Sleeping Habits: {{ user.userprofileinfo.get_bed_display }}</p>
+=======
               <p>Sleeping Habits: {{ user.userprofileinfo.get_Sleeping_Habits_display }}</p>
+>>>>>>> master
               <a href="{% url 'accounts:edit_profile' %}" class="btn btn-light btn-large">Edit Profile</a>
               <a href="{% url 'accounts:survey' %}" class="btn btn-light btn-large">Edit Survey</a>
 
