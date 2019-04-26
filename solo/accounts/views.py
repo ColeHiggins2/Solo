@@ -38,7 +38,7 @@ class Profile_Edit(UpdateView):
         return self.request.user.userprofileinfo
 
 class SurveyCreation(UpdateView):
-    fields = ['smoking','bed','dorm']
+    fields = ['smoking','Sleeping_Habits','Dorm_Choice_One', 'Dorm_Choice_Two', 'Dorm_Choice_Three','cleanliness']
     success_url = reverse_lazy('accounts:profile')
     template_name = 'accounts/survey.html'
 
