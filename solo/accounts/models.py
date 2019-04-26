@@ -42,7 +42,8 @@ class UserProfileInfo(models.Model):
         ('E', 'Early Riser'),
         ('L', 'Late Riser'),
     )
-    bed = models.CharField(max_length = 1, choices=BED, default = 'U')
+    Sleeping_Habits = models.CharField(max_length = 1, choices=BED, default = 'U')
+
     DORM = (
         ('UU', 'Unspecified'),
         ('BE', 'Belk Hall'),
@@ -63,8 +64,19 @@ class UserProfileInfo(models.Model):
         ('WA', 'Wallis Hall'),
         ('SA', 'Sanford Hall'),
     )
-    dorm = models.CharField(max_length=2, choices=DORM, default = 'UU')
+    Dorm_Choice_One = models.CharField(max_length=3, choices=DORM, default = 'UU')
+    Dorm_Choice_Two = models.CharField(max_length=3, choices=DORM, default = 'UU')
+    Dorm_Choice_Three = models.CharField(max_length=3, choices=DORM, default = 'UU')
 
+    cleanliness = (
+    ('UU', 'Unspecified'),
+    ('1', 'One (lowest)'),
+    ('2', 'Two'),
+    ('3', 'Three'),
+    ('4', 'Four'),
+    ('5', 'Five (highest)'),
+    )
+    cleanliness = models.CharField(max_length = 2, choices = cleanliness, default = 'UU')
 
     def __str__(self):
         return self.user.username
