@@ -25,6 +25,7 @@ class UserProfileInfo(models.Model):
     )
     class_year = models.CharField(max_length = 2, choices = CLASS_YEAR, default = 'UU')
     age = models.IntegerField(max_length=2, blank = False, default = 0)
+    matching = models.IntegerField(max_length=2, blank = False, default = 0)
     GENDER = (
         ('M', 'Male'),
         ('F', 'Female'),
