@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
 from . import forms
+from django.contrib.auth import get_user_model
 from accounts.models import UserProfileInfo as UserProfileInfoModel
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import(
@@ -18,14 +19,16 @@ class SignUp(CreateView):
 class UserProfileInfo(LoginRequiredMixin, TemplateView):
     template_name = 'accounts/profile.html'
 
+User = get_user_model()
 class People(TemplateView):
     template_name = 'accounts/people.html'
     success_url = reverse_lazy('accounts:people')
 
     def get(self, request):
-        users = UserProfileInfoModel.objects.all()
+        users = UserProfileInfoModel.objects.exclude(user = request.user)
         args = {'users': users}
         return render(request, self.template_name, args)
+
 
 
 
